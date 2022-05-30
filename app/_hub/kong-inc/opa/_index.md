@@ -79,6 +79,12 @@ params:
       default: false
       description: |
         If set to true, the Kong Gateway Consumer object in use for the current request (if any) is included as input to OPA.
+    - name: include_uri_captures_in_opa_input
+      required: false
+      datatype: boolean
+      default: false
+      description: |
+        If set to true, [regex capture groups](https://docs.konghq.com/gateway/latest/reference/proxy/#using-regex-in-paths) captured on the Kong Gateway Route's path field in the current request (if any) is included as input to OPA.
 ---
 
 ## Usage
