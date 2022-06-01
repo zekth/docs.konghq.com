@@ -26,9 +26,9 @@ Docker Desktop Kubernetes, is a tool for running a local Kubernetes cluster in D
 - [Docker Desktop Kubernetes](https://docs.docker.com/desktop/kubernetes/)
 
 {% endnavtab %}
-{% navtab Kubernetes %}
+{% navtab Kind Kubernetes %}
 
-## Kubernetes prerequisites
+## Kind Kubernetes prerequisites
 
 - [`Helm 3`](https://helm.sh/)
 - [`kubectl`](https://kubernetes.io/docs/tasks/tools/) v1.19 or later
@@ -88,11 +88,11 @@ Configuring Kong Gateway requires a namespace and configuration secrets. Our sec
 
 2. Create Kong namespace for {{site.base_gateway}}:
 
-        kubectl create namespace kong --dry-run=client -oyaml | kubectl apply -f -
+        kubectl create ns kong
 
 3. Create Kong Enterprise License secret:
 
-        kubectl create secret generic kong-enterprise-license --from-file=license=license.json -n kong --dry-run=client -oyaml | kubectl apply -f -
+        kubectl create secret generic kong-enterprise-license --from-file=license=license.json -n kong
 
       >These instructions must be run in the directory that contains your `license.json` file.
 
@@ -105,7 +105,6 @@ Configuring Kong Gateway requires a namespace and configuration secrets. Our sec
             --from-literal=pg_host="enterprise-postgresql.kong.svc.cluster.local" \
             --from-literal=pg_port="5432" \
             --from-literal=password=kong \
-            --dry-run=client -oyaml \
           | kubectl apply -f -
 
 6. Create a SelfSigned certificate issuer:
@@ -201,12 +200,12 @@ http --verify=no get https://kong.127-0-0-1.nip.io/api kong-admin-token:kong
 {% endnavtab %}
 {% endnavtabs %}
 
-## Uninstall
+## Teardown 
 
 {% navtabs %}
-{% navtab Docker %}
+{% navtab Docker Desktop Kubernetes %}
 
-The following steps can be used to uninstall Kong Gateway.
+The following steps can be used to uninstall Kong Gateway from your system.
 
 1. Remove Kong
 
@@ -222,9 +221,9 @@ The following steps can be used to uninstall Kong Gateway.
         kubectl delete pvc -nkong data-enterprise-postgresql-0
 
 {% endnavtab %}
-{% navtab Kubernetes %}
+{% navtab Kind Kubernetes %}
 
-The following steps can be used to uninstall Kong Gateway.
+The following steps can be used to uninstall Kong Gateway from your system.
 
 1. Remove Kong
 
