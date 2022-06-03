@@ -104,8 +104,7 @@ Configuring Kong Gateway requires a namespace and configuration secrets. Our sec
             --from-literal=admin_gui_session_conf='{"storage":"kong","secret":"super_secret_salt_string","cookie_name":"admin_session","cookie_samesite":"off","cookie_secure":false}' \
             --from-literal=pg_host="enterprise-postgresql.kong.svc.cluster.local" \
             --from-literal=pg_port="5432" \
-            --from-literal=password=kong \
-          | kubectl apply -f -
+            --from-literal=password=kong
 
 6. Create a SelfSigned certificate issuer:
 
