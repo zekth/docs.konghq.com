@@ -83,8 +83,9 @@ params:
       required: false
       datatype: boolean
       default: false
+      minimum_version: "3.0.x"
       description: |
-        If set to true, [regex capture groups](https://docs.konghq.com/gateway/latest/reference/proxy/#using-regex-in-paths) captured on the Kong Gateway Route's path field in the current request (if any) is included as input to OPA.
+        If set to true, the [regex capture groups](https://docs.konghq.com/gateway/latest/reference/proxy/#using-regex-in-paths) captured on the Kong Gateway Route's path field in the current request (if any) are included as input to OPA.
 ---
 
 ## Usage
