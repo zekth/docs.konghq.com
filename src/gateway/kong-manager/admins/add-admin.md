@@ -1,5 +1,6 @@
 ---
 title: Add an Admin
+badge: enterprise
 ---
 
 ### Introduction
@@ -12,17 +13,17 @@ This guide describes how to invite an **Admin** in Kong
 Manager. As an alternative, if a **Super Admin** wants to
 invite an **Admin** with the Admin API, it is possible to
 do so using
-[`/admins`](/enterprise/{{page.kong_version}}/admin-api/admins/reference/#invite-an-admin).
+[`/admins`](/gateway/{{page.kong_version}}/admin-api/admins/reference/#invite-an-admin).
 
 ### Prerequisites
 
-* [`enforce_rbac = on`](/enterprise/{{page.kong_version}}/property-reference/#enforce_rbac)
-* Kong Enterprise has [started](/enterprise/{{page.kong_version}}/start-kong-securely)
+* [`enforce_rbac = on`](/gateway/{{page.kong_version}}/reference/configuration/#enforce_rbac)
+* Kong Enterprise has [started](/gateway/{{page.kong_version}}/plan-and-deploy/security/start-kong-securely)
 * Logged in to Kong Manager as a **Super Admin**
-* SMTP must be configured to [send invitation emails](/enterprise/{{page.kong_version}}/kong-manager/networking/email/),
+* SMTP must be configured to [send invitation emails](/gateway/{{page.kong_version}}/kong-manager/configuring-to-send-email/),
 but to simply test this workflow without actually sending
-an email, leave [`smtp_mock = on`](/enterprise/{{page.kong_version}}/property-reference/#smtp_mock). See
-[How to Copy and Send a Registration Link](/enterprise/{{page.kong_version}}/kong-manager/administration/admins/invite/#how-to-copy-and-send-a-registration-link)
+an email, leave [`smtp_mock = on`](/gateway/{{page.kong_version}}/reference/configuration/#smtp_mock). See
+[How to Copy and Send a Registration Link](/gateway/{{page.kong_version}}/kong-manager/admins/invite/#how-to-copy-and-send-a-registration-link)
 for details on how to
 copy a registration link instead of sending an email.
 
@@ -39,15 +40,11 @@ the invitation.
 **Note:** When a new **Admin** receives an invitation, they will
 only be able to log in with that email address.
 
-![Create New Admin](https://konghq.com/wp-content/uploads/2018/11/km-name-admin.png)
-
 ## Step 3
 
 On the **Admin** page, the new invitee will appear on the list with
 the **invited** status. Once they accept the invitation, their
 status will change to **accepted**.
-
-![Invited Admins](https://konghq.com/wp-content/uploads/2018/11/km-invited-admins.png)
 
 ## Step 4
 

@@ -1,5 +1,6 @@
 ---
 title: Reset Passwords and RBAC Tokens in Kong Manager
+badge: enterprise
 ---
 
 ## Passwords and RBAC Tokens
@@ -15,7 +16,7 @@ Since a hash of each **RBAC token** is stored in Kong, then regardless of the Au
 
 ## How to Reset a Forgotten Password in Kong Manager
 
-Prerequisites: 
+Prerequisites:
 
 * `enforce_rbac = on`
 * `admin_gui_auth = basic-auth`
@@ -23,39 +24,38 @@ Prerequisites:
 
 Steps:
 
-1. At the login page, click **Forgot Password** beneath the login field. 
+1. At the login page, click **Forgot Password** beneath the login field.
 2. Enter the email address associated with the account.
-3. Click the link from the email. 
-4. Reset the password. Note that you will need to provide it again immediately after the reset is complete. 
-5. Log in with the new password. 
+3. Click the link from the email.
+4. Reset the password. Note that you will need to provide it again immediately after the reset is complete.
+5. Log in with the new password.
 
 ## How to Reset a Password from within Kong Manager
 
-Prerequisites: 
+Prerequisites:
 
 * `enforce_rbac = on`
 * `admin_gui_auth = basic-auth`
-* [`admin_gui_session_conf` is configured](/enterprise/{{page.kong_version}}/kong-manager/authentication/sessions/). 
+* [`admin_gui_session_conf` is configured](/gateway/{{page.kong_version}}/kong-manager/authentication/sessions/).
 * Already logged in to Kong Manager
 
 Steps:
 
-1. At the **top right corner**, after hovering over the **account name**, select **Profile**. 
+1. At the **top right corner**, after hovering over the **account name**, select **Profile**.
 2. In the **Reset Password** section, fill in the fields and click the **Reset Password** button.
 
 ## How to Reset an RBAC Token in Kong Manager
 
-Prerequisites: 
+Prerequisites:
 
 * `enforce_rbac = on`
-* [`admin_gui_auth` is set](/enterprise/{{page.kong_version}}/kong-manager/security/#authentication-with-plugins).
-* [`admin_gui_session_conf` is configured](/enterprise/{{page.kong_version}}/kong-manager/authentication/sessions/).
+* [`admin_gui_auth` is set](/gateway/{{page.kong_version}}/kong-manager/security/).
+* [`admin_gui_session_conf` is configured](/gateway/{{page.kong_version}}/kong-manager/authentication/sessions/).
 * Already logged in to Kong Manager
 
 Steps:
 
-1. At the **top right corner**, after hovering over the **account name**, select **Profile**. 
+1. At the **top right corner**, after hovering over the **account name**, select **Profile**.
 2. In the **Reset RBAC Token** section at the bottom, click **Reset Token**.
-3. Type in a new token and click **Reset**. 
+3. Type in a new token and click **Reset**.
 4. To copy the token, click the **Copy** button at the right.
-

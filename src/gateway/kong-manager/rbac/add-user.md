@@ -1,6 +1,6 @@
 ---
 title: Create an RBAC User
-book: admin_gui
+badge: enterprise
 toc: true
 ---
 
@@ -14,7 +14,7 @@ toc: true
 
 An RBAC User has the ability to access the Kong Enterprise Admin API. The Permissions assigned to their Role will define the types of actions they can perform with various Admin API objects.
 
-An [Admin](/enterprise/{{page.kong_version}}/kong-manager/security/#what-can-admins-do-in-kong-manager), like an RBAC User, has the ability to access the Kong Enterprise Admin API. The Admin also has the ability log in to Kong Manager. Like an RBAC User, an Admin’s Role will determine the types of actions it can perform—except that they will also have the ability to benefit from Kong Manager’s interface and visualizations.
+An [Admin](/gateway/{{page.kong_version}}/kong-manager/security/), like an RBAC User, has the ability to access the Kong Enterprise Admin API. The Admin also has the ability log in to Kong Manager. Like an RBAC User, an Admin’s Role will determine the types of actions it can perform—except that they will also have the ability to benefit from Kong Manager’s interface and visualizations.
 
 If creating a *service account* for Kong Enterprise, e.g., for a machine as part of an automated process, then an RBAC User is adequate.
 
@@ -23,9 +23,9 @@ If creating a *personal account* for Kong Enterprise, then Admin may be preferab
 #### Prerequisites
 
 * Authentication and RBAC are enabled, following the
-[Getting Started](/enterprise/{{page.kong_version}}/start-kong-securely/#prerequisites)
+[Getting Started](/gateway/{{page.kong_version}}/plan-and-deploy/security/start-kong-securely/#prerequisites)
 guide
-* [Logged in as the Super Admin](/enterprise/{{page.kong_version}}/start-kong-securely/#step-4)
+* [Logged in as the Super Admin](/gateway/{{page.kong_version}}/plan-and-deploy/security/start-kong-securely/#step-4)
 or a user that has `/admins` and `/rbac` read and write access.
 
 ## How to Add an RBAC User in Kong Manager

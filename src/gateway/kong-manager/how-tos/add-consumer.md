@@ -1,5 +1,6 @@
 ---
 title: Add a Consumer
+badge: enterprise
 ---
 
 ## 1. Create a Consumer
@@ -27,11 +28,6 @@ Connection: keep-alive
 }
 ```
 Or, add your first Consumer via Kong Manager:
-
-<video width="100%" autoplay loop controls>
-  <source src="https://konghq.com/wp-content/uploads/2019/02/create-consumer-ent-34.mov" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
 
 Congratulations! You've just added your first Consumer to Kong.
 

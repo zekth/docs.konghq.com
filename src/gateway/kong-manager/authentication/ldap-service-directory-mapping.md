@@ -1,5 +1,6 @@
 ---
 title: Mapping LDAP Service Directory Groups to Kong Roles
+badge: enterprise
 ---
 
 ### Introduction

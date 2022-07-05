@@ -313,10 +313,69 @@ items:
         url: /hub/kong-inc/zipkin
         absolute_url: true
 
+  - title: Kong Manager
+    icon: /assets/images/icons/documentation/icn-manager-color.svg
+    url: /kong-manager/overview
+    items:
+      - text: Networking Configuration
+        url: /kong-manager/configuration
+      - text: Securing Kong Manager
+        url: /kong-manager/security
+      - text: Authentication
+        items:
+          - text: Create a Super Admin
+            url: /kong-manager/authentication/super-admin
+          - text: Basic Auth
+            url: /kong-manager/authentication/basic
+          - text: LDAP
+            url: /kong-manager/authentication/ldap
+          - text: LDAP Service Directory Mapping
+            url: /kong-manager/authentication/ldap-service-directory-mapping
+          - text: OIDC
+            url: /kong-manager/authentication/oidc
+          - text: OIDC Authenticated Group Mapping
+            url: /kong-manager/authentication/oidc-mapping
+          - text: Sessions
+            url: /kong-manager/authentication/sessions
+      - text: Reset Passwords and RBAC Tokens
+        url: /kong-manager/reset-password
+      - text: Configuring to Send Email
+        url: /kong-manager/configuring-to-send-email
+      - text: Workspace
+        items: 
+          - text: Workspaces in Kong Manager
+            url: /kong-manager/workspaces/workspaces
+          - text: Add a Workspace
+            url: /kong-manager/workspaces/add-workspace
+      - text: RBAC
+        items:
+        - text: RBAC in Kong Manager
+          url: /kong-manager/rbac
+        - text: Create a New Role
+          url: /kong-manager/rbac/new-role
+        - text: Create an RBAC User
+          url: /kong-manager/rbac/add-user
+        - text: Add a Role and Permissions
+          url: /kong-manager/rbac/add-role
+      - text: Admins
+        items:
+        - text: Invite an Admin
+          url: /kong-manager/admins/invite
+        - text: Add an Admin
+          url: /kong-manager/admins/add-admin
+      - text: How-Tos
+        items:
+          - text: Add a Service and Route
+            url: /kong-manager/how-tos/add-service
+          - text: Enable a Plugin
+            url: /kong-manager/how-tos/enable-plugin
+          - text: Add a Consumer
+            url: /kong-manager/how-tos/add-consumer
+    
   - title: Reference
     icon: /assets/images/icons/documentation/icn-references-color.svg
     items:
-      - text: Admin API
+      - text: Admin API 
         url: /admin-api
         items:
           - text: DB-less Mode

@@ -1,17 +1,17 @@
 ---
 title: Enable LDAP for Kong Manager
-book: admin_gui
+badge: enterprise
 ---
 
-## Enable LDAP
-
-Kong Enterprise offers the ability to bind authentication for Kong Manager
+{{site.base_gateway}} offers the ability to bind authentication for Kong Manager
 *Admins* to a company's Active Directory using the
 [LDAP Authentication Advanced plugin](/hub/kong-inc/ldap-auth-advanced).
 
-⚠️ **IMPORTANT**: by using the configuration below, it is unnecessary to
-manually apply the **Plugin**; the configuration alone will enable LDAP
+Using the configuration below, it is unnecessary to
+manually apply the LDAP plugin; the configuration alone will enable LDAP
 Authentication for Kong Manager.
+
+## Enable LDAP
 
 Ensure Kong is configured with the following properties either in the
 configuration file or using environment variables:
@@ -52,11 +52,11 @@ admin_gui_auth_conf = {                                       \
     * *Note*: As with any configuration property, sensitive information may be set as an
       environment variable instead of being written directly in the configuration file.
 
-⚠️**Important:** the **Sessions Plugin** requries a secret and is configured securely by default.
+The **Sessions Plugin** requries a secret and is configured securely by default.
 * Under all circumstances, the `secret` must be manually set to a string.
 * If using HTTP instead of HTTPS, `cookie_secure` must be manually set to `false`.
 * If using different domains for the Admin API and Kong Manager, `cookie_samesite` must be set to `off`.
-Learn more about these properties in [Session Security in Kong Manager](/enterprise/{{page.kong_version}}/kong-manager/authentication/sessions/#session-security), and see [example configurations](/enterprise/{{page.kong_version}}/kong-manager/authentication/sessions/#example-configurations).
+Learn more about these properties in [Session Security in Kong Manager](/gateway/{{page.kong_version}}/kong-manager/authentication/sessions/#session-security), and see [example configurations](/gateway/{{page.kong_version}}/kong-manager/authentication/sessions/#example-configurations).
 
 After starting Kong with the desired configuration, you can create new *Admins*
 whose usernames match those in the AD. Those users will then be able to accept
@@ -64,4 +64,4 @@ invitations to join Kong Manager and log in with their LDAP credentials.
 
 ### Using Service Directory Mapping on the CLI
 
-{% include /md/{{page.kong_version}}/ldap/ldap-service-directory-mapping.md %}
+{% include_cached /md/gateway/ldap-service-directory-mapping.md %}

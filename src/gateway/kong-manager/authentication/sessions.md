@@ -1,6 +1,6 @@
 ---
 title: Sessions in Kong Manager
-book: admin_gui
+badge: enterprise
 ---
 
 ## How does the Sessions Plugin work in Kong Manager?
@@ -50,8 +50,9 @@ admin_gui_session_conf = {
 * `"cookie_samesite":"<SET_DEPENDING_ON_DOMAIN>"`: `"Strict"` by default. See [Session Security](#session-security) for
     exceptions.
 
-⚠️**Important:**
-*The following properties must not be altered from default for use with Kong Manager:*
+
+{:.important}
+> **Important:** The following properties must **not** be altered from default for use with Kong Manager:*
 * `logout_methods`
 * `logout_query_arg`
 * `logout_post_arg`
@@ -66,16 +67,12 @@ The Session configuration is secure by default, so the cookie uses the
 and [SameSite](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#SameSite_cookies)
 directives.
 
-⚠️**Important:** The following properties must be altered depending on the protocol and domains in use:
+The following properties must be altered depending on the protocol and domains in use:
 * If using HTTP instead of HTTPS: `"cookie_secure": false`
 * If using different domains for the Admin API and Kong Manager: `"cookie_samesite": "off"`
 
-<div class="alert alert-warning">
-  
-   <strong>Important: </strong>Sessions are not invalidated when a user logs out if <code>"storage": "cookie"</code>
-   (the default) is used. In that case, the cookie is deleted client-side. Only when session data is
-   stored server-side with <code>"storage": "kong"</code> set is the session actively invalidated.
-</div>
+{:.important}
+> **Important:** Sessions are not invalidated when a user logs out if `"storage": "cookie"` (the default) is used. In that case, the cookie is deleted client-side. Only when session data is stored server-side with `"storage": "kong"` set is the session actively invalidated.
 
 
 ## Example Configurations

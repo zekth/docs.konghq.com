@@ -1,43 +1,54 @@
 ---
-title: Workspaces in Kong Manager
-book: admin_gui
+title: Configure Workspaces in Kong Manager
+badge: enterprise
 ---
 
-**Workspaces** enable an organization to segment traffic so that
-teams of **Admins** sharing the same Kong cluster are only able to
-interact with entities from their groups. Within a **Workspace**,
-it is possible to invite **Admins** to a particular team and to
-enforce **RBAC** with **Roles** and **Permissions** that further
-delimit the types of actions and entities available to an **Admin**.
+Workspaces enable an organization to segment traffic so that
+teams of admins sharing the same Kong cluster are only able to
+interact with entities from their groups. Within a workspace,
+it is possible to invite admins to a particular team and to
+enforce RBAC with roles and permissions that further
+delimit the types of actions and entities available to an admin.
 
-## Default Workspace
+## Prerequisites
 
-When the first **Super Admin** logs in, they begin in the **Workspace**
-named **default**. From here, they may invite **Admins** who are
-intended to be able to manage all other **Workspaces**, as well as
-the **Workspaces** themselves.
+* [`enforce_rbac = on`](/gateway/{{page.kong_version}}/reference/configuration/#enforce_rbac)
+* {{site.base_gateway}} has [started](/gateway/{{page.kong_version}}/plan-and-deploy/security/start-kong-securely)
+* Logged in to Kong Manager as a **Super Admin**
 
-## Navigating across Workspaces in Kong Manager
+## Default workspace
 
-To navigate between Workspaces from the **Overview** page, click on any
-Workspace displayed beneath the **Vitals** chart.
+When the first Super Admin logs in, they begin in the workspace
+named **default**. From here, they may invite admins to manage the default or
+any other workspaces.
 
-The list of **Workspaces** may be rendered as cards or a table,
+## Navigating across workspaces in Kong Manager
+
+To navigate between workspaces from the **Overview** page, click on any
+workspace displayed beneath the **Vitals** chart.
+
+The list of workspaces may be rendered as cards or a table,
 depending on preference.
 
 ![Workspace List](https://doc-assets.konghq.com/1.3/manager/kong-manager-workspaces-grid.png)
 
 
-## Creating New Workspaces
+## Create a Workspace
+
+This guide describes how to create workspaces in Kong
+Manager. You can also use the Admin API [`/workspaces/` route](/gateway/{{page.kong_version}}/admin-api/workspaces/reference/#add-workspace) to create a workspace.
 
 1. Log in as the **Super Admin**. On the **Workspaces** page, click the **New Workspace**
 button at the top right to see the **Create Workspace** form. Name and choose a
 color / icon for the new Workspace.
 
-    ![New Workspace Form](https://doc-assets.konghq.com/1.3/manager/workspaces/01-create-new-workspace.png)
+    Each workspace name should be unique,
+    regardless of letter case. For example, naming one
+    workspace "Payments" and another one "payments" will
+    create two different workspaces that appear identical.
 
-    ⚠️ **WARNING**: Do not name Workspaces the same as these major routes in Kong
-    Manager:
+    Do not name workspaces the same as these major API names (paths)
+    in Admin API:
 
     ```
     • Admins
@@ -52,10 +63,8 @@ color / icon for the new Workspace.
     • Vitals
     ```
 
-4. Click the "Create New Workspace" button. Upon creation, the application will
+2. Click the **Create New Workspace** button. Upon creation, the application will
 navigate to the new Workspace's dashboard.
-
-    ![New Dashboard](https://doc-assets.konghq.com/1.3/manager/workspaces/02-workspace-dashboard.png)
 
 ## Edit a workspace
 
@@ -103,7 +112,7 @@ all files from a folder will remove the folder.
     --data "config.portal=false"
    ```
 
-1. [Delete each role](/enterprise/{{page.kong_version}}/admin-api/rbac/reference/#delete-a-role)
+1. [Delete each role](/gateway/{{page.kong_version}}/admin-api/rbac/reference/#delete-a-role)
 from the workspace:
 
     ```bash
@@ -169,9 +178,23 @@ HTTP 204 No Content
 
 ## Workspace Access
 
-If a **Role** does not have permission to access entire endpoints within
-a **Workspace**, the **Admin** assigned to that **Role** will not be
+If a role does not have permission to access entire endpoints within
+a workspace, the admin assigned to that role will not be
 able to see the related navigation links.
 
-For more information about **Admins** and **Roles**, see
-[RBAC in Kong Manager](/enterprise/{{page.kong_version}}/kong-manager/administration/rbac/).
+To set up access:
+1. Open Kong Manager.
+2. On the left sidebar, click the **Admins** link in the
+**Security** section.
+
+  If the sidebar is collapsed, hover over
+  the **security badge icon** at the bottom and click the
+  **Admins** link.
+
+The Admins page displays a list of current admins and
+roles. Four default roles specific to the new
+workspace are already visible, and new roles specific
+to the workspace can be assigned from this page.
+
+For more information about admins and roles, see
+[RBAC in Kong Manager](/gateway/{{page.kong_version}}/configure/auth/rbac/).
