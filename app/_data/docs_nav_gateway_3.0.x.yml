@@ -363,15 +363,7 @@ items:
           url: /kong-manager/admins/invite
         - text: Add an Admin
           url: /kong-manager/admins/add-admin
-      - text: How-Tos
-        items:
-          - text: Add a Service and Route
-            url: /kong-manager/how-tos/add-service
-          - text: Enable a Plugin
-            url: /kong-manager/how-tos/enable-plugin
-          - text: Add a Consumer
-            url: /kong-manager/how-tos/add-consumer
-    
+
   - title: Reference
     icon: /assets/images/icons/documentation/icn-references-color.svg
     items:
