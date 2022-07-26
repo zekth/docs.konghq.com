@@ -340,21 +340,18 @@ items:
             absolute_url: true
       - text: Tracing
         items:
-          - text: OpenTelemetry tracing
+          - text: Overview
             url: /observability/tracing
-            absolute_url: true
+          - text: Tracing Framework
+            url: /observability/tracing/api
           - text: Write custom trace exporter
             url: /observability/tracing/write-custom-trace-exporter
-            absolute_url: true
           - text: Zipkin plugin
             url: /hub/kong-inc/zipkin
             absolute_url: true
           - text: OpenTelemetry Plugin
             url: /hub/kong-inc/opentelemetry
             absolute_url: true
-      - text: Tracing Framework
-        url: /observability/tracing/api
-        absolute_url: true
 
   - title: Reference
     icon: /assets/images/icons/documentation/icn-references-color.svg
