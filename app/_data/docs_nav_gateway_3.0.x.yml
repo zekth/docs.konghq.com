@@ -294,7 +294,7 @@ items:
       - text: Helpers CLI
         url: /developer-portal/helpers/cli
 
-  - title: Monitor
+  - title: Observability
     icon: /assets/images/icons/documentation/icn-vitals.svg
     items:
       - text: Kong Vitals
@@ -310,11 +310,50 @@ items:
             url: /vitals/vitals-prometheus-strategy
           - text: Estimate Vitals Storage in PostgreSQL
             url: /vitals/vitals-estimates
-      - text: Prometheus plugin
-        url: /hub/kong-inc/prometheus
-        absolute_url: true
-      - text: Zipkin plugin
-        url: /hub/kong-inc/zipkin
+      - text: Logs
+        items:
+          - text: File Log plugin
+            url: /hub/kong-inc/file-log
+            absolute_url: true
+          - text: HTTP Log plugin
+            url: /hub/kong-inc/http-log
+            absolute_url: true
+          - text: Kafka Log plugin
+            url: /hub/kong-inc/kafka-log
+            absolute_url: true
+          - text: TCP Log plugin
+            url: /hub/kong-inc/tcp-log
+            absolute_url: true
+          - text: UDP Log plugin
+            url: /hub/kong-inc/udp-log
+            absolute_url: true
+          - text: Syslog plugin
+            url: /hub/kong-inc/syslog
+            absolute_url: true
+      - text: Metrics
+        items:
+          - text: Prometheus plugin
+            url: /hub/kong-inc/prometheus
+            absolute_url: true
+          - text: StatsD plugin
+            url: /hub/kong-inc/statsd
+            absolute_url: true
+      - text: Tracing
+        items:
+          - text: OpenTelemetry tracing
+            url: /observability/tracing
+            absolute_url: true
+          - text: Write custom trace exporter
+            url: /observability/tracing/write-custom-trace-exporter
+            absolute_url: true
+          - text: Zipkin plugin
+            url: /hub/kong-inc/zipkin
+            absolute_url: true
+          - text: OpenTelemetry Plugin
+            url: /hub/kong-inc/opentelemetry
+            absolute_url: true
+      - text: Tracing Framework
+        url: /observability/tracing/api
         absolute_url: true
 
   - title: Reference
@@ -506,6 +545,9 @@ items:
 
           - text: (un)Installing your plugin
             url: /plugin-development/distribution
+
+          - text: Measuring your plugin
+            url: /plugin-development/telemetry
 
       - text: Plugins in Other Languages
         url: /reference/external-plugins
