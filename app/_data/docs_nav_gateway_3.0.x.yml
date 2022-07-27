@@ -35,7 +35,7 @@ items:
           - text: Manage Kong Gateway with decK
             url: /understanding-kong/manange-kong-with-deck
           - text: Kong Performance Testing
-            url: /reference/performance-testing-framework
+            url: /understanding-kong/kong-performance-testing
           - text: Glossary
             url: /understanding-kong/glossary
 
