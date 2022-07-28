@@ -12,6 +12,8 @@ Bitnami
 blockquote
 blockquotes
 boolean
+client_payload
+client_status
 CloudFormation
 Cognito
 config
@@ -115,6 +117,7 @@ runtime
 runtimes
 deduplication
 deduplicate
+sandboxed
 sandboxing
 serializer
 serverless
@@ -145,6 +148,8 @@ unpublish
 unregister
 unregistering
 upstream
+upstream_payload
+upstream_status
 upstreams
 usr
 uri
