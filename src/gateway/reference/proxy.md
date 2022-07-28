@@ -1269,7 +1269,7 @@ This makes {{site.base_gateway}} forward the `Connection` and `Upgrade` headers 
 upstream service, instead of dismissing them due to the hop-by-hop nature of a
 standard HTTP proxy.
 
-### WebSocket Proxy Modes
+### WebSocket proxy modes
 
 There are two methods for proxying WebSocket traffic in {{site.base_gateway}}:
 
@@ -1277,7 +1277,7 @@ There are two methods for proxying WebSocket traffic in {{site.base_gateway}}:
 * WS(S) services and routes
 
 {% navtabs %}
-{% navtab HTTP(S) Services and Routes %}
+{% navtab HTTP(S) services and routes %}
 
 Services and routes using the `http` and `https` protocols are fully capable of
 handling WebSocket connections with no special configuration. With this method,
@@ -1300,14 +1300,14 @@ services:
 
 {% endnavtab %}
 
-{% navtab WS(S) Services and Routes %}
+{% navtab WS(S) services and routes %}
 {:.badge .enterprise}
 
 In addition to HTTP services and routes, {{site.ee_product_name}} includes
 the `ws` (WebSocket-over-http) and `wss` (WebSocket-over-https) options for
 service `protocol` and route `protocols`. In contrast to `http`/`https`, `ws`
-and `wss` services have full control over the underlying WebSocket connection,
-meaning they can use WebSocket plugins and the [WebSocket PDK](LINK_TO_PDK) to
+and `wss` services have full control over the underlying WebSocket connection.
+This means they can use WebSocket plugins and the [WebSocket PDK](/pdk/kong.websocket.client/) to
 perform business logic on a per-message basis (message validation, accounting,
 rate-limiting, etc).
 
@@ -1330,12 +1330,11 @@ services:
 
 
 {:.note}
-> _A note about performance:_
->
+> **Note**:
 > Decoding and encoding WebSocket messages comes with a non-zero amount of
-> performance overhead when compared to the protocol-agnostic behavior of
+> performance overhead when compared with the protocol-agnostic behavior of
 > `http(s)` services. If your API does not need the extra capabilities
-> provided by a `ws(s)` service, it is generally recommended to use an `http(s)`
+> provided by a `ws(s)` service, it's recommended that you use an `http(s)`
 > service instead.
 
 ### WebSocket and TLS
@@ -1351,7 +1350,7 @@ WebSocket service, you should carefully pick the protocol you want to use
 between {{site.base_gateway}} and the upstream.
 
 If you want to use TLS, your upstream WebSocket service must be defined using
-the `https` (or `wss`) protocol in the service `protocol` property, and the
+the `https` (or `wss`) protocol in the service `protocol` property and the
 proper port (usually 443). To connect without TLS, then the `http` (or `ws`)
 protocol and port (usually 80) should be used in `protocol` instead.
 
